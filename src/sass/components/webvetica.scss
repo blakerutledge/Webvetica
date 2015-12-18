@@ -1,34 +1,101 @@
+$all-elements: "h1, h2, h3, h4, h5, h6, h7, p";
+
+$min-breakpoint: 400px;
+$max-breakpoint: 1200px;
+
+$min-breakpoint-em: 42em;
+$max-breakpoint-em: 62em;
+
+$min-font-size: 10px;
+$max-font-size: 15px;
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+
 .webvetica {
 	font-family: "webvetica";
+
+	// @include fluid-type($min-breakpoint, $max-breakpoint, $min-font-size, $max-font-size);
+	font-size: $min-font-size;
+
+	@media screen and (min-width: $min-breakpoint) {
+		font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-breakpoint} ) / #{strip-unit($max-breakpoint - $min-breakpoint)} ));
+	}
+
+	@media screen and (min-width: $max-breakpoint) {
+		font-size: $max-font-size;
+	}
 
 	h1 {
 		font-weight: 900;
 		font-size: 5.2em;
 		letter-spacing: -0.03em;
+		line-height: 1.5em;
 	}
 
 	h2 {
 		font-weight: 800;
 		font-size: 2.8em;
 		letter-spacing: -0.02em;
+		// line-height: 1.5em;
 	}
 
 	h3 {
 		font-size: 2.4em;
 		font-weight: 700;
 		letter-spacing: -0.02em;
+		// line-height: 1.5em;
 	}
 
 	p {
 		font-size: 1.2em;
-		line-height: 1.6em;
+		// line-height: 1.6em;
 		margin-top: 1.2em;
 		letter-spacing: 0.02em;
 	}
+
+
+
+	// - - - Fluid Line Height - - - //
+
+	// $min-leading: 1.2em;
+	// $max-leading: 1.6em;
+
+	// #{$allElements} {
+	// 	line-height: $min-leading;
+	// }
+
+	// @media screen and (min-width: $min-breakpoint-em) {
+	// 	#{$allElements} {
+	//  	   line-height: calc( #{ $min-leading } + #{ strip-unit( $max-leading - $min-leading ) } * ( ( #{$min-breakpoint-em} - 100 ) / #{ strip-unit( $max-breakpoint-em - $min-breakpoint-em ) } ) );
+	// 	}
+	// }
+
+	// @media screen and (min-width: $max-breakpoint-em) {
+	// 	#{$allElements} {
+	// 		line-height: $max-leading;
+	// 	}
+	// }
+	#{$all-elements} {
+		line-height: 1.2em;
+	}
+
+	@media screen and (min-width: 600px) {
+		#{$all-elements} {
+			line-height: calc(1.2em + 1.0 * ((100vw - 600px) / 300));
+		}
+	}
+
+	@media screen and (min-width: 900px) {
+		#{$all-elements} {
+    		line-height: 2.2em;
+    	}
+	}
+
+
 }
-
-
-
 
 
 
