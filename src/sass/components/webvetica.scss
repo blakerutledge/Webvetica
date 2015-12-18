@@ -1,4 +1,4 @@
-$all-elements: "h1, h2, h3, h4, h5, h6, h7, p";
+$all-elements: "h1, h2, h3, h4, h5, h6, h7, p, div";
 
 $min-breakpoint: 400px;
 $max-breakpoint: 1200px;
@@ -82,15 +82,15 @@ $max-font-size: 15px;
 		line-height: 1.2em;
 	}
 
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 40rem) {
 		#{$all-elements} {
-			line-height: calc(1.2em + 1.0 * ((100vw - 600px) / 300));
+			line-height: calc(1.2em + 1.0 * ((100vw - 40rem) / 40));
 		}
 	}
 
-	@media screen and (min-width: 900px) {
+	@media screen and (min-width: 80rem) {
 		#{$all-elements} {
-    		line-height: 2.2em;
+    		 line-height: 2.2em;
     	}
 	}
 
