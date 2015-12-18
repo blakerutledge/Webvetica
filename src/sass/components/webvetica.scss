@@ -1,0 +1,84 @@
+.webvetica {
+	font-family: "webvetica";
+
+	h1 {
+		font-weight: 900;
+		font-size: 5.2em;
+		letter-spacing: -0.03em;
+	}
+
+	h2 {
+		font-weight: 800;
+		font-size: 2.8em;
+		letter-spacing: -0.02em;
+	}
+
+	h3 {
+		font-size: 2.4em;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+	}
+
+	p {
+		font-size: 1.2em;
+		line-height: 1.6em;
+		margin-top: 1.2em;
+		letter-spacing: 0.02em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// - - - - - OVERRIDES - - - - - //
+
+
+.wv-200 {
+	font-weight: 200;
+}
+
+.wv-300 {
+	font-weight: 300;
+}
+
+.wv-400 {
+	font-weight: 400;
+}
+
+.wv-500 {
+	font-weight: 500;
+}
+
+.wv-600 {
+	font-weight: 600;
+}
+
+.wv-700 {
+	font-weight: 700;
+}
+
+.wv-800 {
+	font-weight: 800;
+}
+
+.wv-900 {
+	font-weight: 900;
+}
+
+.wv-italic {
+	font-style: italic;
+}
+
+.wv-regular {
+	font-style: normal;
+}
