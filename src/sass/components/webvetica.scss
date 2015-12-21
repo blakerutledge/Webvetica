@@ -1,10 +1,13 @@
 $all-elements: "h1, h2, h3, h4, h5, h6, h7, p, div";
+$block-elements: "p, div";
+$header-elements: "h1, h2, h3, h4, h5, h6, h7";
+
 
 $min-breakpoint: 400px;
 $max-breakpoint: 1200px;
 
-$min-breakpoint-em: 42em;
-$max-breakpoint-em: 62em;
+$min-breakpoint-em: 36em;
+$max-breakpoint-em: 72em;
 
 $min-font-size: 10px;
 $max-font-size: 15px;
@@ -78,18 +81,19 @@ $max-font-size: 15px;
 	// 		line-height: $max-leading;
 	// 	}
 	// }
-	#{$all-elements} {
-		line-height: 1.2em;
+	p {
+		line-height: 1.4em;
+		// display: inline-block;
 	}
 
-	@media screen and (min-width: 40rem) {
-		#{$all-elements} {
-			line-height: calc(1.2em + 1.0 * ((100vw - 40rem) / 40));
+	@media screen and (min-width: $min-breakpoint-em) {
+		p {
+			line-height: calc( 1.07em + ( 0.7 * ( ( 100vw - #{ $min-breakpoint-em } ) / 36 ) ) );
 		}
 	}
 
-	@media screen and (min-width: 80rem) {
-		#{$all-elements} {
+	@media screen and (min-width: $max-breakpoint-em) {
+		p {
     		 line-height: 2.2em;
     	}
 	}
